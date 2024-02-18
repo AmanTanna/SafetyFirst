@@ -1,0 +1,42 @@
+{
+  "University of Toronto Mississauga": [
+    {
+      "latitude": 43.54825477029809,
+      "longitude": -79.66268156865922,
+      "weight": 0.8
+    },
+    "Lots of depressed first year students. Avoid if you can"
+  ],
+  "University of Toronto St George": [
+    {
+      "latitude": 43.6600039588756,
+      "longitude": -79.39484787540664,
+      "weight": 1
+    },
+    "Potentially toxic students sabotaging each other in order to make CS POST. Worse than Mississauga, avoid at all costs."
+  ],
+  "Pearson Airport": [
+    {
+      "latitude": 43.67705517207535,
+      "longitude": -79.63371291559994,
+      "weight": 0.3
+    },
+    "Expensive food, somewhat ok area, very busy."
+  ],
+  "CN Tower": [
+    {
+      "latitude": 43.642581699149204,
+      "longitude": -79.38709971843824,
+      "weight": 0.1
+    },
+    "Food is overpriced, mainly go there for the view. Safety wise, its downtown toronto."
+  ],
+  "Ontario Science Center": [
+    {
+      "latitude": 43.71697314176533,
+      "longitude": -79.33889076504421,
+      "weight": 0.01
+    },
+    "Actually really nice place! Not unsafe at all unless you get lost as a 7 year old. Good place to go with anyone!"
+  ]
+}
