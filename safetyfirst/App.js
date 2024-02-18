@@ -1,17 +1,20 @@
-import React from 'react';
-import { View, TouchableOpacity, StyleSheet } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
 import MapView from "react-native-maps";
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { FAB } from 'react-native-paper';
 
-const App = () => {
-  const handleFabPress = () => {
-    // Handle FAB press event
-    console.log('Floating Action Button pressed!');
-  };
 
+
+
+// export default App;
+
+// HomeScreen component
+const HomeScreen = ({ navigation }) => {
   return (
-    <View style={stylesmap.container}>
-      <MapView
+    <View style={styles.container}>
+      { <MapView
         style={stylesmap.map}
         initialRegion={{
           latitude: 43.54857207929054,
@@ -19,39 +22,52 @@ const App = () => {
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}
+      /> }
+      <FAB
+        style={styles.fab}
+        icon="plus"
+        onPress={() => navigation.navigate('AnotherScreen')}
       />
-      <View style={styles.content}>
-        {/* Your main content goes here */}
-      </View>
-
-      {/* Floating Action Button */}
-      <TouchableOpacity style={styles.fab} onPress={handleFabPress}>
-        <FontAwesome name="plus" size={30} color="white" />
-      </TouchableOpacity>
     </View>
   );
 };
 
+// AnotherScreen component
+const AnotherScreen = () => {
+  return (
+    <View style={styles.container}>
+      {/* Contents of the another screen */}
+    </View>
+  );
+};
+
+// Stack Navigator
+const Stack = createStackNavigator();
+
+// App component
+const App = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="AnotherScreen" component={AnotherScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+// Styles
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-  },
-  content: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
   fab: {
     position: 'absolute',
-    width: 60,
-    height: 60,
-    backgroundColor: '#007AFF',
-    borderRadius: 30,
-    alignItems: 'center',
-    justifyContent: 'center',
-    bottom: 20,
-    right: 20,
-    elevation: 8,
+    margin: 16,
+    right: 0,
+    bottom: 0,
   },
 });
 
@@ -66,7 +82,5 @@ const stylesmap = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
   },
 });
-
-
 
 export default App;
